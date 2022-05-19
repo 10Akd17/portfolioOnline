@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="exp">
+
+{% for experience in experience %}
+
+<div class="card" style="width: 18rem;">
+ <img src="{{ experience.photo}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">Card title</h5>
+    <p class="card-text"> {{ experience.poste}}</p>
+    <p class="card-text"> {{ experience.nomEntreprise}}</p>
+    <p class="card-text"> {{ experience.lieu}}</p>
+    <p class="card-text"> {{ experience.description}}</p>
+
+{% if app.user %}
+  <a href="{{ path('app_experience_edit', { id: experience.id }) }}" class="btn btn-primary">Modifier</a>  
+  <a href="{{ path('app_experience_delete', { id: experience.id }) }}" class="btn btn-danger">Supprimer</a>  
+{% endif %}
+
+
+</div>
+</div>
+
+{% endfor %}
+
+  </div>
+{% endblock %}

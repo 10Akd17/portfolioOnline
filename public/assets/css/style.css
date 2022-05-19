@@ -1,0 +1,497 @@
+body {
+  background-color: #fff;
+  color: #414141;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  /*La propriété -webkit-text-stroke permet de définir l'épaisseur et la couleur du contour utilisé pour les lettres d'un texte. Cette propriété est une propriété raccourcie qui permet de définir les propriétés*/
+  -webkit-text-stroke: rgba(255, 255, 255, 0.01) 0.1px;
+  /*antialiased: lisse les caractères au niveau du pixel
+       (et non par sous-échantillonnage). Pour des textes 
+       clairs sur fonds sombres, cette méthode fait paraître 
+       le texte plus clair.*/
+  -webkit-font-smoothing: antialiased !important;
+}
+
+
+.messagerie-ul li {
+  display: inline-block;
+}
+
+.messagerie {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/*********** tout les liens ********/
+a {
+  text-decoration: none;
+  -ms-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+}
+
+a:hover,
+a:focus,
+a:active {
+  outline: medium none;
+  text-decoration: none;
+}
+/*********** fin tout les liens ********/
+
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+html,
+body {
+  height: 100%;
+}
+/******************************************************** SECTION HEADER ***************************************************/
+
+
+header {
+  min-height: 100%;
+  background: url(../watercolor.png);
+  height: 65em;  
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+header,
+header .header-content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+header .header-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 50px;
+  z-index: 10;
+}
+
+.header-content-inner h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.05em;
+  text-shadow: 5px 5px 5px rgb(154, 154, 154);
+}
+
+.header-content-inner h1:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 20px auto 0;
+  background: #919191;
+}
+
+.header-content-inner p {
+  font-size: 22px;
+  line-height: 1.8;
+  color: #e4e4e4;
+}
+
+
+
+.navbar{
+  background-color: #78889233;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.navbar:hover{
+  background-color: rgb(74, 116, 142);
+}
+.navbar-brand {
+  color: #678496;
+}
+
+
+
+/******************************************************** FIN SECTION HEADER ***************************************************/
+
+
+
+
+
+
+
+/******************* SECTION A PROPOS DE MOI **************************/
+.pp img {
+  animation: 3s linear 1s infinite running slidein;
+}
+.parag1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+.blabla {
+  width: 40%;
+  align-self: center;
+  height: 20em;
+  background: url(../fond-texture-bleu-aquarelle-splater-tache_1017-27773.webp);
+  background-size: 160% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.blabla p {
+  position: relative;
+  top: 60px;
+}
+
+.blabla p a{
+  color: white;
+}
+
+.blabla p a:hover{
+  color: darksalmon;
+}
+/*******************FIN  SECTION A PROPOS DE MOI **************************/
+
+/******************************************************** SECTION COMPETENCE ***************************************************/
+section {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: url(../23842.jpg);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.portfolio-section-inner .portfolio-section-data {
+  display: table-cell;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-section-inner .portfolio-section-data .portfolio-section-text {
+  position: absolute;
+  top: 150%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(70, 109, 193, 0.8);
+  margin: auto;
+  transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+.portfolio-section-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-section-inner .portfolio-section-data:hover .portfolio-section-text {
+  top: 0;
+}
+
+.portfolio-section-text .portfolio-section-text-inner {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.portfolio-section-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.exp,
+.portfolio-section-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+.portfolio-section-inner {
+  width: 100%;
+}
+.portfolio-section-flex {
+  height: 10em;
+  align-self: center;
+}
+/**************************** Fin SECTION COMPETENCE ******************************/
+
+/******************************************************** SECTION EXPERIENCE ***************************************************/
+
+.exp {
+  background: url(../watercolor6.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.card {
+  margin: 100px;
+  background-color: rgba(103, 132, 150, 0);
+  margin: 100px;
+  border-color: rgb(255, 255, 255);
+  box-shadow: 5px 10px 10px rgb(255, 255, 255);
+}
+
+/******************************************************** PAGE LOGIN  ***************************************************/
+.connexion {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: center;
+  border: 5px solid gray;
+}
+
+/********************************************************FIN PAGE LOGIN ***************************************************/
+form {
+  margin-bottom: 100px;
+}
+/************** btn dans les codition competence *************/
+
+/******************************************************** SECTION CONTACT ***************************************************/
+
+#contact {
+  background-color: #9e9e9e;
+  padding: 80px 0;
+  position: relative;
+  text-align: center;
+  margin-top: 1px;
+}
+
+#contact h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  color: #fff;
+  letter-spacing: 0.05em;
+}
+
+#contact h3:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  margin: 20px auto 0;
+  background: #40adf0;
+}
+#contact .row {
+  display: flex;
+  justify-content: center;
+}
+#contact p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.gap {
+  display: flex;
+  margin-top: 28px;
+  justify-content: center;
+}
+
+#contact span.glyphicon {
+  color: #adadad;
+  display: block;
+  margin: 0 auto 30px;
+}
+
+#contact a {
+  color: #a3b2b9;
+}
+
+#contact a:hover {
+  color: #ffffff;
+}
+
+/******************************************************** FIN SECTION CONTACT ***************************************************/
+
+
+
+
+
+
+/* ****************************FOOTER SECTION RESEAUX************************************ */
+footer {
+  padding: 80px 0;
+  position: relative;
+  text-align: center;
+  margin-top: 1px;
+}
+footer a{
+  color: #ffffff;
+}
+
+.der-footer a:hover {
+  color: #86989d;
+}
+.der_footer{
+background-color: #9e9e9e;
+}
+
+/********************************** FIN FOOTER SECTION RESEAU *********************************/
+
+
+
+
+
+
+
+/***************************** Formulaire d'envoi contact **************/
+#formulaire {
+  color: #40adf000;
+}
+#formulaire_message {
+  width: 48vw;
+  margin-top: 5px;
+}
+#formulaire_nom {
+  width: 10.5vw;
+  margin-top: 30px;
+}
+
+#formulaire_prenom {
+  width: 12vw;
+  margin-left: -22px;
+  margin-top: 5px;
+}
+
+#formulaire_email {
+  width: 15vw;
+  margin-left: -6px;
+  margin-top: 5px;
+}
+
+#formulaire_submit {
+  width: 10vw;
+  margin-left: -6px;
+  border-radius: 20px;
+  background-color: #4ea5c0;
+  color: rgb(255, 255, 255);
+  margin-top: 30px;
+}
+
+/***************** formulaire ajouter une competence ********************/
+
+#competence_message {
+  width: 48vw;
+  margin-top: 5px;
+}
+#competence_nomCompetence {
+  width: 10.5vw;
+}
+
+#competence_niveauCompetence {
+  width: 12vw;
+  margin-top: 5px;
+}
+
+/* #competence_description {
+    width: vw;
+    margin-top: 5px;
+  } */
+
+.cardAjout {
+  display: flex;
+  justify-content: center;
+}
+
+#competence_logoComptence {
+  width: 14.5vw;
+  margin-top: 5px;
+}
+#competence_submit {
+  width: 10vw;
+  margin-left: -6px;
+  border-radius: 20px;
+  background-color: #f05f40;
+  margin-top: 30px;
+}
+
+.social a i {
+  animation: 3s ease-in 1s infinite reverse both running slidein;
+}
+
+/***************** formulaire ajouter une experience   ********************/
+
+.cardAjout {
+  display: flex;
+  justify-content: center;
+}
+
+#experience_submit {
+  width: 10vw;
+  margin-left: -6px;
+  border-radius: 20px;
+  background-color: #469d9e;
+  margin-top: 30px;
+}
+
+/********************* poste dans experience etc *****************/
+.titre_experience{
+  text-decoration:underline ;
+  color: red;
+}
+.poste_experience {
+  font-size: 1.2em;
+  color: rgb(0, 51, 255);
+}
+.entreprise_experience{
+  color: #fff;
+}
+.lieu_experience{
+  color: orange;
+}
+.description_experience{
+    color: gray;
+
+}
+
+
+/* CARD PROJET */
+
+.projet{
+  display: flex;
+  justify-content: center;
+  background: url(../81626.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+}
+
+@media screen and (min-width: 800px) {
+  header {
+    min-height: 100%;
+    background: url(../watercolor.png);
+    height: 65em;  
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  
+  }
+}

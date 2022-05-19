@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <h3>MES PROJETS</h3>
+ {% for projet in projet %}
+
+    <div class="projet" id="projet">
+
+
+    <div class="card mb-3" style="width:60%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+     <img src="{{ projet.photoProjet}}"  class="card-img-top" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+      {% if app.user %}
+  <a href="{{ path('app_projet_edit', { id: projet.id }) }}" class="btn btn-primary">Modifier</a>  
+  <a href="{{ path('app_projet_delete', { id: projet.id }) }}" class="btn btn-danger">Supprimer</a>  
+{% endif %}
+
+    </div>
+  </div>
+</div>
+</div> 
+
+{% endfor %}
+{% endblock %}      

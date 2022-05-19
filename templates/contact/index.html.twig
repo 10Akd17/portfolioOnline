@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+
+    <div class="row  mx-auto">
+
+
+ <div id="contact">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                  <h3>Contact me</h3>
+                  <p>
+                      © 2021,Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore saepe molestias velit quos harum at officiis fuga mollitia, voluptas, dicta laudantium doloribus, accusamus molestiae fugiat eius commodi error consequuntur excepturi.
+                  </p>
+
+                        {{form(formulaire)}}
+
+
+                  <div class="gap">
+                      <div class="col-sm-6 col-xs-12">
+                          <span class="glyphicon glyphicon-earphone"></span>
+                          <a href="tel:+33768794564"><i class="fa-solid fa-phone"></i> +33768794564</a>
+                      </div>
+                      <div class="col-sm-6 col-xs-12">
+                          <span class="glyphicon glyphicon-envelope"></span>
+                          <a href="mailto:abdelkarimcherif5@gmail.com"> <i class="fa-solid fa-envelope"></i> Abdelkarimcherif5@gmail.com</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+    
+</div>
+    
+{% endblock %}

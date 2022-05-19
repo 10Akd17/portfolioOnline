@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% for contact in messagerie %}
+<div class="card" style="width: 100%;">
+  <!-- {# <img src="{{ experience.  }}" class="card-img-top" alt="..."> #} -->
+  
+    
+
+    <div class="container">
+      <ul><h5 class="card-title">Message</h5>
+        <li>Prenom</li>
+        <li>Nom</li>
+        <li>Email</li>
+        <li>Message</li>
+      </ul>
+          
+    <ul class="messagerie-ul">
+      <li><p class="card-text"> {{ contact.nom}}</p></li>
+      <li><p class="card-text"> {{ contact.prenom}}</p></li>
+      <li><p class="card-text"> {{ contact.email}}</p></li>
+      <li><p class="card-text"> {{ contact.message}}</p></li>
+    </ul>
+    </div>
+    
+    
+    
+
+</div>{% if app.user %}
+  <a href="{{ path('app_messagerie_delete', { id: contact.id }) }}"  style="width: 10rem;" class="btn btn-danger">Supprimer</a>  
+{% endif %}
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

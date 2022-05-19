@@ -1,0 +1,208 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<body>
+
+
+
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>ABDEL-KARIM C H E R I F</h1>
+                <p>
+                    DEVLOPPEUR WEB JUNIOR
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <div class="parag1">
+            <div class="pp">
+                <img src="../../assets/3135715.png" style="border-radius: 50%; width: 400px;" alt="">
+            </div>
+
+            <div class="blabla">
+                <h2>A PROPOS DE MOI</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ea omnis magnam  possimus debitis fugiat ratione in cumque  <a href="experience">mes experiences</a> consequatur quo, iusto est deleniti, optio dolorem sed nobis <a href="competence">mes competences</a>  perspiciatis odio illo maxime nam praesentium mollitia? Quidem natus, aperiam in,<a href="projet">mes projets</a> iusto at eveniet velit optio quisquam fugit quam ratione officiis quis sit.</p>
+            </div>
+        </div>
+
+
+
+
+        {# // EXPERIENCE ----------------------------------- #}
+         <h3>MES EXPERIENCES</h3>
+        <div class="exp" id="experience">
+
+
+{% for experience in experience %}
+
+<div class="card" style="width: 18rem;">
+ <img src="{{ experience.photo}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center titre_experience">Formation</h5>
+    <p class="card-text poste_experience"> {{ experience.poste}}</p>
+    <p class="card-text entreprise_experience"> {{ experience.nomEntreprise}}</p>
+    <p class="card-text lieu_experience"> {{ experience.lieu}}</p>
+    <p class="card-text description_experience"> {{ experience.description}}</p>
+
+{% if app.user %}
+  <a href="{{ path('app_experience_edit', { id: experience.id }) }}" class="btn btn-primary">Modifier</a>  
+  <a href="{{ path('app_experience_delete', { id: experience.id }) }}" class="btn btn-danger">Supprimer</a>  
+{% endif %}
+
+
+</div>
+</div>
+
+ {% endfor %} 
+
+ </div>
+
+ {# // FIN  EXPERIENCE ----------------------------------- #}
+
+
+
+ {# // Debut competences  ----------------------------------- #}
+
+
+ <h3>MES COMPETENCES</h3>
+
+    <section class="portfolio-section" id="portfolio">
+        <div class="portfolio-section-inner" >
+
+        {% for competence in competence %}
+
+            <div class="portfolio-section-flex">
+
+                <div class="portfolio-section-data" ;>
+
+                  <img src="{{ competence.logoComptence }}" style="width: 300px; height: 300px;" class="card-img-top" alt="..."> 
+
+                    <div class="portfolio-section-text">
+
+                        <div class="portfolio-section-text-inner">
+                            <p class="card-text"> {{ competence.nomCompetence}}</p>
+
+                            <div class="progress">
+
+                                <div class="progress-bar w-50" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+                                    aria-valuemax="100"><p class="card-text"> {{ competence.niveauCompetence}}</p>
+                                
+                                </div>
+                            </div><p class="card-text"> {{ competence.description}}</p>
+                        </div>
+                    </div>
+               </div>          
+
+                {% if app.user %}
+                  <a href="{{ path('app_competence_edit', { id: competence.id }) }}" class="btn btn-primary">Modifier</a>  
+                  <a href="{{ path('app_competence_delete', { id: competence.id }) }}" class="btn btn-danger">Supprimer</a>  
+                {% endif %}
+              
+           </div>
+       {% endfor %}
+     </div>
+          
+
+    </section>
+
+
+ <h3>MES PROJETS</h3>
+ {% for projet in projet %}
+
+    <div class="projet" id="projet">
+
+
+    <div class="card mb-3" style="width:60%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+     <img src="{{ projet.photoProjet}}"  class="card-img-top" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ projet.nomProjet}}</h5>
+        <p class="card-text">{{ projet.description}}</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+
+      {% if app.user %}
+            <a href="{{ path('app_projet_edit', { id: projet.id }) }}" class="btn btn-primary">Modifier</a>  
+            <a href="{{ path('app_projet_delete', { id: projet.id }) }}" class="btn btn-danger">Supprimer</a>  
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+</div> 
+
+{% endfor %}
+
+  </div>
+
+
+
+
+
+
+
+
+    <div class="row  mx-auto">
+
+
+ <div id="contact">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                  <h3>Contact me</h3>
+                  <p>
+                      © 2021,Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore saepe molestias velit quos harum at officiis fuga mollitia, voluptas, dicta laudantium doloribus, accusamus molestiae fugiat eius commodi error consequuntur excepturi.
+                  </p>
+
+                        {{form(formulaire)}}
+
+
+                  <div class="gap">
+                      <div class="col-sm-6 col-xs-12">
+                          <span class="glyphicon glyphicon-earphone"></span>
+                          <a href="tel:+33768794564 "><i class="fa-solid fa-phone"></i> +33768794564</a>
+                      </div>
+                      <div class="col-sm-6 col-xs-12">
+                          <span class="glyphicon glyphicon-envelope"></span>
+                          <a href="mailto:abdelkarimcherif5@gmail.com"> <i class="fa-solid fa-envelope"></i> Abdelkarimcherif5@gmail.com</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+    
+</div>
+    
+    </main>
+    
+   
+               
+</body>
+
+
+</html>
+{% endblock %}
+{# <div class="card card_projet" style="width: 20rem;">
+  <img src="{{ projet.photoProjet}}" style="height:400px; " class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">projet</h5>
+    <p class="card-text"> {{ projet.nomProjet}}</p> 
+    <p class="card-text"> {{ projet.description}}</p>
+    {# <p class="card-text"> {{ projet.dateProjet}}</p> #}
